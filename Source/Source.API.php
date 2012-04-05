@@ -282,6 +282,7 @@ function Source_Process_Changesets( $p_changesets, $p_repo=null ) {
 	$t_enable_resolving = config_get( 'plugin_Source_enable_resolving' );
 	$t_enable_message = config_get( 'plugin_Source_enable_message' );
 	$t_enable_mapping = config_get( 'plugin_Source_enable_mapping' );
+	$t_enable_force_fixed_in_version = config_get( 'plugin_Source_enable_force_fixed_in_version' );
 
 	$t_bugfix_status = config_get( 'plugin_Source_bugfix_status' );
 	$t_bugfix_status_pvm = config_get( 'plugin_Source_bugfix_status_pvm' );
@@ -372,7 +373,7 @@ function Source_Process_Changesets( $p_changesets, $p_repo=null ) {
 				$t_bug->resolution = $t_resolution;
 				$t_update = true;
 			}
-			if ( is_blank( $t_bug->fixed_in_version ) ) {
+			if ( is_blank( $t_bug->fixed_in_version ) || $t_enable_force_fixed_in_version ) {
 				$t_bug->fixed_in_version = $t_version;
 				$t_update = true;
 			}

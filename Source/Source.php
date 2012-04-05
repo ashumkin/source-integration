@@ -48,6 +48,7 @@ class SourcePlugin extends MantisPlugin {
 			'enable_resolving'	=> OFF,
 			'enable_message'	=> OFF,
 			'enable_product_matrix' => OFF,
+			'enable_force_fixed_in_version' => OFF,
 
 			'buglink_regex_1'	=> '/(?:bugs?|issues?|reports?)+\s+(?:#(?:\d+)[,\.\s]*)+/i',
 			'buglink_regex_2'	=> '/#?(\d+)/',
