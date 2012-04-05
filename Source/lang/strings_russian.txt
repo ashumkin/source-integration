@@ -1,0 +1,147 @@
+<?php
+
+# Copyright (c) 2010 John Reese
+# Licensed under the MIT license
+
+$s_plugin_Source_ = '';
+$s_plugin_Source_title = 'Интеграция с сиcтемами контроля версий';
+$s_plugin_Source_description = 'Интеграция с системами контроля версий, с использованием абстрактного API';
+
+$s_plugin_Source_repository = 'Репозиторий';
+$s_plugin_Source_repositories = 'репозитории';
+$s_plugin_Source_changeset = 'Изменения';
+$s_plugin_Source_changesets = 'Изменения';
+$s_plugin_Source_file = 'Файл';
+$s_plugin_Source_files = 'Файлов';
+$s_plugin_Source_diff = 'Diff';
+
+$s_plugin_Source_name = 'Название';
+$s_plugin_Source_type = 'Тип';
+$s_plugin_Source_branch = 'Ветка';
+$s_plugin_Source_action = 'Action';
+$s_plugin_Source_author = 'Автор';
+$s_plugin_Source_committer = 'Committer';
+$s_plugin_Source_username = 'Пользователь';
+$s_plugin_Source_timestamp = 'Время';
+$s_plugin_Source_parent = 'Предок';
+$s_plugin_Source_url = 'URL';
+$s_plugin_Source_info = 'Дополнительная информация';
+$s_plugin_Source_revision = 'Ревизия';
+$s_plugin_Source_date_begin = 'Дата начала';
+$s_plugin_Source_date_end = 'Дата концa';
+$s_plugin_Source_message = 'Сообщение';
+$s_plugin_Source_filename = 'Имя файла';
+$s_plugin_Source_ported = 'Ported';
+$s_plugin_Source_vcs_username = 'Пользователь SCM';
+
+$s_plugin_Source_issue = 'Инцидент';
+$s_plugin_Source_issues = 'Инцидентов';
+$s_plugin_Source_actions = 'Действия';
+
+$s_plugin_Source_details = 'Детали';
+$s_plugin_Source_browse = 'Просмотр';
+$s_plugin_Source_manage = 'Настроить';
+$s_plugin_Source_create = 'Создать';
+$s_plugin_Source_import = 'Импорт';
+$s_plugin_Source_edit = 'Изменить';
+$s_plugin_Source_update = 'Обновить';
+$s_plugin_Source_delete = 'Удалить';
+$s_plugin_Source_search = 'Поиск';
+$s_plugin_Source_attach = 'Связать';
+$s_plugin_Source_detach = 'Отвязать';
+$s_plugin_Source_modify_search = 'Изменить поиск';
+$s_plugin_Source_new_search = 'Новый поиск';
+$s_plugin_Source_permalink = 'Пост. ссылка';
+$s_plugin_Source_select_one = '(Выбрать)';
+$s_plugin_Source_select_any = '[любой]';
+$s_plugin_Source_pending = 'Ожидает';
+$s_plugin_Source_na = 'Н/Д';
+
+$s_plugin_Source_create_repository = 'Создать репозиторий';
+$s_plugin_Source_manage_repository = 'Настроить репозиторий';
+$s_plugin_Source_update_repository = 'Обновить репозиторий';
+$s_plugin_Source_delete_repository = 'Удалить репозиторий';
+$s_plugin_Source_update_configuration = 'Обновить настройки';
+$s_plugin_Source_search_changesets = 'Search Changesets';
+
+$s_plugin_Source_back = 'Назад к списку';
+$s_plugin_Source_back_repo = 'Назад к репозиторию';
+$s_plugin_Source_back_changeset = 'Назад к изменениям';
+$s_plugin_Source_import_full = 'Импортировать всё';
+$s_plugin_Source_import_latest = 'Импортировать последнее';
+$s_plugin_Source_related_changesets = 'Связанные изменения';
+$s_plugin_Source_affected_issues = 'Затронутые инциденты';
+$s_plugin_Source_attach_to_issue = 'Связать с инцидентами:';
+
+$s_plugin_Source_configuration = 'Настройки';
+$s_plugin_Source_api_key = 'ключ API';
+$s_plugin_Source_api_key_info = '<span class="small">Это секретный пароль для использования службами, посылающими данные коммитов в Mantis.<br/>Для генерации случайного ключа запустите <code>openssl rand -hex 12</code> или что-нибудь вроде того.</span>';
+$s_plugin_Source_allow_remote_checkin = 'Allow Remote Check-In<br/><span class="small">(Deprecated)</span>';
+$s_plugin_Source_remote_checkin_urls = 'Allowed Addresses';
+$s_plugin_Source_allow_remote_import = 'Allow Remote Imports<br/><span class="small">(Deprecated)</span>';
+$s_plugin_Source_remote_import_urls = 'Allowed Addresses';
+$s_plugin_Source_view_threshold = 'View Threshold';
+$s_plugin_Source_update_threshold = 'Update Threshold';
+$s_plugin_Source_manage_threshold = 'Manage Threshold';
+$s_plugin_Source_username_threshold = 'Set Username Threshold';
+$s_plugin_Source_buglink_regex_1 = 'Bug Link Regex Pass 1';
+$s_plugin_Source_buglink_regex_2 = 'Bug Link Regex Pass 2';
+$s_plugin_Source_bugfix_regex_1 = 'Bug Fixed Regex Pass 1';
+$s_plugin_Source_bugfix_regex_2 = 'Bug Fixed Regex Pass 2';
+$s_plugin_Source_bugfix_status = 'Bug Fixed Status';
+$s_plugin_Source_bugfix_status_pvm = 'Bug Fixed Product Status';
+$s_plugin_Source_bugfix_status_off = '[Disabled]';
+$s_plugin_Source_bugfix_status_default = '[Resolved Status]';
+$s_plugin_Source_bugfix_resolution = 'Bug Fixed Resolution';
+$s_plugin_Source_bugfix_handler = 'Bug Fixed Assign To Committer';
+$s_plugin_Source_bugfix_message = 'Bug Fixed Message Template';
+$s_plugin_Source_bugfix_message_info = '<span class="small">Use $1 for branch, $2 for revision, $3 for timestamp, $4 for commit message, $5 for repository name, or $6 for changeset ID.</span>';
+$s_plugin_Source_reset = 'Reset to default';
+$s_plugin_Source_menu_links = 'Main Menu Links';
+$s_plugin_Source_show_repo_link = 'Репозитории';
+$s_plugin_Source_show_search_link = 'Поиск';
+$s_plugin_Source_show_repo_stats = 'Статистика репозиториев';
+$s_plugin_Source_enabled_features = 'Включённые функции';
+$s_plugin_Source_enable_linking = 'Changeset Linking <span class="small">([sv]:&lt;reponame&gt;:&lt;revision&gt;:)</span>';
+$s_plugin_Source_enable_mapping = 'Branch Mappings';
+$s_plugin_Source_enable_resolving = 'Resolve Fixed Issues';
+$s_plugin_Source_enable_message = 'Bug Fixed Message';
+$s_plugin_Source_enable_porting = 'Porting Status';
+$s_plugin_Source_enable_product_matrix = 'Product Matrix Integration';
+$s_plugin_Source_enable_force_fixed_in_version = 'Устанавливать "Исправлено в версии", даже если она уже задана';
+
+$s_plugin_Source_branch_mapping = 'Branch Mappings';
+$s_plugin_Source_mapping_update = 'Update Mappings';
+$s_plugin_Source_mapping_strategy = 'Стратегия';
+$s_plugin_Source_mapping_version = 'Версия';
+$s_plugin_Source_mapping_version_info = '<acronym title="Only used with the Explicit Version strategy.">?</acronym>';
+$s_plugin_Source_mapping_regex = 'Regular Expression';
+$s_plugin_Source_mapping_regex_info = '<acronym title="Only apply the selected strategy to versions matching the given PCRE-style regex.">?</acronym>';
+$s_plugin_Source_mapping_create = 'Create Mapping';
+$s_plugin_Source_mapping_explicit = 'Explicit Version';
+$s_plugin_Source_mapping_near = 'Nearest Release Date';
+$s_plugin_Source_mapping_far = 'Furthest Release Date';
+$s_plugin_Source_mapping_first = 'Version Sorted First';
+$s_plugin_Source_mapping_last = 'Version Sorted Last';
+
+$s_plugin_Source_changeset_attached = 'Changeset attached';
+$s_plugin_Source_changeset_removed = 'Changeset removed';
+
+$s_plugin_Source_ensure_delete = 'Вы действительно хотите удалить репозиторий "%s" и всю его историю?';
+$s_plugin_Source_ensure_delete_changeset = 'Вы действительно хотите удалить ревизию "%s"?';
+$s_plugin_Source_ensure_import_full = 'This will import to a new copy of your repository, and then destroy the old repository data, and may require use of shell access.  Do you wish to continue?';
+$s_plugin_Source_ensure_import_latest = 'This will attempt to import recent data for your repository, and may require use of shell access.  Do you wish to continue?';
+$s_plugin_Source_import_results = 'Результаты импорта';
+$s_plugin_Source_import_stats = 'Импортировано %s наборов изменений, %s файлов и %s ссылок на инциденты.';
+$s_plugin_Source_import_repo_error = 'Import process produced an error.';
+$s_plugin_Source_ = '';
+
+$s_plugin_Source_invalid_checkin_url = 'Invalid remote check-in address';
+$s_plugin_Source_invalid_import_url = 'Invalid remote import address';
+$s_plugin_Source_invalid_repo = 'Неверное имя репозитория';
+$s_plugin_Source_invalid_changeset = 'Changeset information could not be loaded';
+
+$s_plugin_Source_import_full_failed = 'Full repository data importing failed.';
+
+$s_plugin_Source_changeset_column_title = 'C';
+
