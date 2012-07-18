@@ -150,7 +150,7 @@ class SourceGitwebPlugin extends MantisSourcePlugin {
 			$t_heads_url = $this->uri_base( $p_repo ) . 'a=heads';
 			$t_branches_input = url_get( $t_heads_url );
 			
-			$t_branches_input = str_replace( array(PHP_EOL, '&lt;', '&gt;', '&nbsp;'), array('', '<', '>', ' '), $t_branches_input );
+			$t_branches_input = str_replace( array("\n", "\r", '&lt;', '&gt;', '&nbsp;'), array('', '', '<', '>', ' '), $t_branches_input );
 			
 			$t_branches_input_p1 = strpos( $t_branches_input, '<table class="heads">' );
 			$t_branches_input_p2 = strpos( $t_branches_input, '<div class="page_footer">' );
@@ -274,7 +274,7 @@ class SourceGitwebPlugin extends MantisSourcePlugin {
 		if ( !SourceChangeset::exists( $p_repo->id, $t_commit['revision'] ) ) {
 
 			# Parse for commit data
-			preg_match( '#<tr><td>author</td><td>(?:<a[^>]*>)?([^<>]*)(?:</a>)? *(?:<a[^>]*>)?<([^<>]*)>(?:</a>)?</td>(?:<[^<>]*>\s*)*?</tr>\n<tr><td></td><td><span class="datetime">\w*, (\d* \w* \d* \d*:\d*:\d*)#', $t_gitweb_data, $t_matches );
+			preg_match( '#<tr><td>author</td><td>(?:<a[^>]*>)?([^<>]*)(?:</a>)? *(?:<a[^>]*>)?<([^<>]*)>(?:</a>)?</td>(?:<[^<>]*>\s*)*?</tr><tr><td></td><td><span class="datetime">\w*, (\d* \w* \d* \d*:\d*:\d*)#', $t_gitweb_data, $t_matches );
 			$t_commit['author'] = $t_matches[1];
 			$t_commit['author_email'] = $t_matches[2];
 			$t_commit['date'] = date( 'Y-m-d H:i:s', strtotime( $t_matches[3] ) );
@@ -291,7 +291,7 @@ class SourceGitwebPlugin extends MantisSourcePlugin {
 				}
 			}
 
-			preg_match( '#<div class="page_body">\n(.*)\n</div>#', $t_gitweb_data, $t_matches );
+			preg_match( '#<div class="page_body">(.*)</div>#', $t_gitweb_data, $t_matches );
 			$t_commit['message'] = trim( str_replace( '<br/>', PHP_EOL, $t_matches[1] ) );
 
 			# Strip ref links and signoff spans from commit message
@@ -303,8 +303,8 @@ class SourceGitwebPlugin extends MantisSourcePlugin {
 			# Parse for changed file data
 			$t_commit['files'] = array();
 
-			preg_match_all( '#<tr class="(?:light|dark)">\n<td><a class="list" href="[^"]*;h=(\w+);[^"]*">([^<>]+)</a></td>'.
-				'\n<td>(?:<span class="file_status (\w+)">[^<>]*</span>)?</td>#',
+			preg_match_all( '#<tr class="(?:light|dark)"><td><a class="list" href="[^"]*;h=(\w+);[^"]*">([^<>]+)</a></td>'.
+				'<td>(?:<span class="file_status (\w+)">[^<>]*</span>)?</td>#',
 				$t_gitweb_files, $t_matches, PREG_SET_ORDER );
 
 			foreach( $t_matches as $t_file_matches ) {
