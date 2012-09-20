@@ -1206,7 +1206,6 @@ class SourceChangeset {
 	 * @param int Repository ID
 	 */
 	static function delete_by_repo( $p_repo_id ) {
-		$t_bug_table = plugin_table( 'bug', 'Source' );
 		$t_changeset_table = plugin_table( 'changeset', 'Source' );
 
 		# first drop any files for the repository's changesets
