@@ -182,6 +182,12 @@ if ( $t_can_update ) {
 <input type="hidden" name="id" value="<?php echo $t_changeset->id ?>"/>
 <input type="submit" value="<?php echo plugin_lang_get( 'edit' ) ?>"/>
 </form>
+<form action="<?php echo helper_mantis_url( 'plugin.php' ) ?>" method="get">
+<input type="hidden" name="page" value="Source/delete_page"/>
+<input type="hidden" name="id" value="<?php echo $t_changeset->id ?>"/>
+<?php echo form_security_field( 'plugin_Source_changeset_delete' ) ?>
+<input type="submit" value="<?php echo plugin_lang_get( 'delete' ) ?>"/>
+</form>
 </td>
 </tr>
 <?php } ?>

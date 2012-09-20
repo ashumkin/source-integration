@@ -1066,6 +1066,25 @@ class SourceChangeset {
 	}
 
 	/**
+	 * Delete changeset
+	 * @param int User ID (for the detaching from bugs)
+	 */
+	function delete( $p_user_id ) {
+		$t_changeset_table = plugin_table( 'changeset', 'Source' );
+
+		# first drop any files for the changeset
+		SourceFile::delete_by_changeset( $this->id );
+
+		# detach from any attached bugs
+		$this->load_bugs();
+		$this->bugs = array();
+		$this->save_bugs( $p_user_id );
+
+		$t_query = "DELETE FROM $t_changeset_table WHERE id=" . db_param();
+		db_query_bound( $t_query, array( $this->id ) );
+	}
+
+	/**
 	 * Check if a repository's changeset already exists in the database.
 	 * @param int Repo ID
 	 * @param string Revision
