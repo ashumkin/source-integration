@@ -1147,6 +1147,22 @@ class SourceChangeset {
 	}
 
 	/**
+	 * Fetch a changeset objects given a repository and parent revision (children)
+	 * @param multi Repo object
+	 * @param string Revision
+	 * @return multi Changeset object
+	 */
+	static function load_by_parent( $p_repo_id, $p_revision ) {
+		$t_changeset_table = plugin_table( 'changeset', 'Source' );
+
+		$t_query = "SELECT * FROM $t_changeset_table WHERE repo_id=" . db_param() . '
+				AND parent=' . db_param() . ' ORDER BY timestamp DESC';
+		$t_result = db_query_bound( $t_query, array( $p_repo_id, $p_revision ) );
+
+		return self::from_result( $t_result );
+	}
+
+	/**
 	 * Fetch an array of changeset objects for a given repository ID.
 	 * @param int Repository ID
 	 * @return array Changeset objects

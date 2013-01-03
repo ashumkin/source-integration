@@ -83,7 +83,7 @@ $t_changesets = $t_vcs->commit( $t_repo, $f_data );
 
 # Changesets couldn't be loaded apparently
 if ( !is_array( $t_changesets ) ) {
-	die( plugin_lang_get( 'invalid_changeset' ) );
+	die( plugin_lang_get( 'invalid_changeset' ) . "\n");
 }
 
 # No more changesets to checkin
